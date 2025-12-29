@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HazeUndayz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="css.css" />   
+</head>
+
+<body class="bg-black text-white font-serif m-0 p-0">
+
+
+<!-- HAZEUNDAYZ 年齢確認（20歳以上向け） -->
+<div id="age-gate" class="fixed inset-0 bg-black/60 flex justify-center items-center z-[9999]">
+  <div class="bg-black/80 backdrop-blur-md p-10 rounded-3xl text-left max-w-md w-full drop-shadow-xl">
+    
+    <!-- タイトル -->
+    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4 tracking-wide">
+      Welcome to      HazeUndayz
+    </h2>
+    
+    <!-- 説明 -->
+    <p class="text-white text-base md:text-lg leading-relaxed mb-6">
+      このサイトには<br>20歳以上を対象とした商品が含まれています。<br>
+      年齢を確認して、<br>HazeUndayzの世界をお楽しみください。
+    </p>
+    
+    <!-- ボタン -->
+    <div class="flex gap-4">
+      <button id="age-yes" class="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+        20歳以上です
+      </button>
+      <button id="age-no" class="bg-gray-700 text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-600 transition">
+        20歳未満です
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const ageGate = document.getElementById('age-gate');
+  const yesBtn = document.getElementById('age-yes');
+  const noBtn = document.getElementById('age-no');
+
+  // ページ読み込み時に確認
+  if (localStorage.getItem('ageConfirmed') === 'true') {
+    ageGate.style.display = 'none';
+  }
+
+  // 20歳以上ボタン
+  yesBtn.addEventListener('click', () => {
+    localStorage.setItem('ageConfirmed', 'true'); // フラグ保存
+    ageGate.style.display = 'none';
+  });
+
+  // 20歳未満ボタン
+  noBtn.addEventListener('click', () => {
+    window.location.href = 'https://www.google.com'; // 外部サイトへ
+  });
+</script>
+
+
+
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full flex justify-center items-center px-4 h-[69px]  
+  bg-black/80 backdrop-blur-sm border-b border-white-800 z-50">
+
+  <!-- ロゴ画像 -->
+  <a href="index.html">
+    <img src="images/toppagename1.png" alt="HazeUndayz" 
+         class="h-20 md:h-16 object-contain block">
+  </a>
+
+  <!-- ハンバーガーメニュー -->
+  <button id="menu-button" class="text-white focus:outline-none absolute right-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+</header>
+
+<!-- メニュー（ポップアップ） -->
+<div id="menu-popup" class="hidden fixed top-[69px] left-0 w-full bg-black/95 text-white flex flex-col items-center space-y-6 py-8 z-40">
+  <a href="what.html" class="hover:opacity-70">About</a>
+  <a href="product.html" class="hover:opacity-70">Products</a>
+  <a href="news.html" class="hover:opacity-70">News</a>
+  <a href="contact.html" class="hover:opacity-70">Contact</a>
+</div>
+
+<!-- コンテンツがヘッダー下に隠れないように -->
+<div class="pt-[69px]"></div>
+
+
+
+
+
+<!-- Hero  -->
+<section id="products" class="relative w-full max-w-4xl aspect-[3/4.5] mx-auto overflow-hidden">
+
+  <!-- 中央配置コンテナ -->
+  <div class="absolute inset-0 flex justify-center items-center">
+
+    <!-- タイトル -->
+    <h2 class="text-[24px] sm:text-[28px] md:text-[32px] text-white font-bold mb-6 text-center drop-shadow-lg z-10">
+      Take a Chunk.
+    </h2>
+
+    <!-- 画像リンク -->
+    <a href="Product.html" class="absolute inset-0">
+      <img src="images/ppp.jpg" alt="HazeUndayz"
+           class="w-full h-full object-cover shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 rounded-2xl ">
+    </a>
+
+  </div>
+</section>
+
+
+
+
+  <section class="max-w-4xl mx-auto px-6 py-16 space-y-10 mt-60">
+    <!-- Chunk -->
+    <div class="text-center space-y-4">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-widest">Chunk</h2>
+
+<div class="space-y-8">
+      <div class="w-[90vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[40vw] mx-auto bg-black/90 border border-white overflow-hidden">
+        <a href="product.html#clear" class="group block">
+          <img src="images/clear.jpg" alt="Chunk/CLEAR"
+               class="w-full object-cover aspect-[4/2] transition-transform duration-500 group-hover:scale-105">
+        </a>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold scale-y-125">Chunk／CLEAR</h3>
+          <p class="text-sm md:text-base text-gray-300"></p>
+        </div>
+  </div>
+
+  <div class="w-[90vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[40vw] mx-auto bg-black/90 border border-white overflow-hidden">
+<a href="product.html#ember" class="group block">
+          <img src="images/ember.jpg" alt="Chunk/EMBER"
+               class="w-full object-cover aspect-[4/2] transition-transform duration-500 group-hover:scale-105">
+        </a>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold scale-y-125">Chunk／EMBER</h3>
+          <p class="text-sm md:text-base text-gray-300"></p>
+        </div>
+  </div>
+
+  </div>
+      </div>
+    </div>
+
+    <!-- Joint -->
+    <div class="text-center space-y-4 mt-12">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-widest">Joint</h2>
+      <div class="w-[90vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[40vw] mx-auto bg-black/90 border border-white overflow-hidden">
+        <a href="product.html#joint" class="group block">
+          <img src="images/productjoint1.jpg" alt="Joint No.1"
+               class="w-full object-cover aspect-[4/2] transition-transform duration-500 group-hover:scale-105">
+        </a>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold scale-y-125">Haze Ritual Set</h3>
+          <p class="text-sm md:text-base text-gray-300"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+ 
+
+
+<a href="what.html" class="block w-[90%] md:max-w-4xl mx-auto mt-48 mb-60">
+  <img src="images/what.jpg" 
+       alt="What is HazeUndayz" 
+       class="w-full h-auto object-cover">
+</a>
+
+
+
+
+
+
+
+
+<!-- エクスペリエンス -->
+
+<section class="mt-52 bg-black text-white font-sans py-16 tracking-tight">
+  <div class="max-w-4xl mx-auto text-center mb-32">
+    <h2 class="text-6xl md:text-8xl font-extrabold opacity-90 mb-4">EXPERIENCE</h2>
+    <p class="text-sm md:text-base leading-relaxed opacity-90">
+      HazeUndayz isn’t just about herbs — </br>it’s about the ritual, the hands that craft them, and the art that comes alive in every Chunk.</br>
+      Each blend invites you to explore, savor, and fully experience the world of HazeUndayz, letting you slow down and reconnect with your own pace.</br>
+    </p>
+    <br/>
+    <p class="text-xs md:text-base leading-relaxed opacity-90">
+      HazeUndayzは、ただのハーブじゃない。</br>
+      手で触れ、形をつくる小さな儀式、Chunkごとに浮かぶアート――</br>
+      ひとつのブレンドが、あなたを自然に引き込み、HazeUndayzの世界に没入させる。</br>
+      日常を少しゆるめ、自分のペースに戻る時間を楽しむための体験です。</br>
+    </p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="mt-[10px] space-y-20 w-[90vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[40vw] mx-auto">
+
+    <!-- CARD 1 -->
+    <div class="relative max-w-4xl mx-auto overflow-hidden shadow-lg mt-12">
+      <div class="aspect-[4/1]">
+        <img 
+          src="images/a.jpg" 
+          alt="HazeUndayz" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="p-3 pt-2 bg-black">
+        <h3 class="text-[27px] font-bold underline decoration-2 text-white tracking-[-0.03em] mt-4">Chunk</h3>
+        <p class="text-sm mt-8 text-gray-300">
+          Chunk is a moment in between —
+          a small ritual that turns the ordinary into something sacred.
+        </p>
+        <p class="text-xs mt-4 text-gray-400">
+          Chunkはひとつの“間”。  
+          日常が神聖に変わる小さな儀式。
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="relative max-w-4xl mx-auto overflow-hidden shadow-lg mt-12">
+       <div class="aspect-[4/1]">
+        <img 
+          src="images/b.jpg" 
+          alt="HazeUndayz" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="p-3 pt-2 bg-black">
+        <h3 class="text-[27px] font-bold underline decoration-2 text-white tracking-[-0.03em] mt-4">Hand Roll</h3>
+        <p class="text-sm mt-8 text-gray-300">
+          Roll. Feel. Create. — the moment becomes yours.
+        </p>
+        <p class="text-xs mt-4 text-gray-400">
+           巻く。感じる。創る。  
+          その瞬間は、あなたのものになる。
+        </p>
+      </div>
+    </div>
+
+
+    <!-- CARD 3 -->
+    <div class="relative max-w-4xl mx-auto overflow-hidden shadow-lg mt-12">
+      <div class="aspect-[4/1]">
+        <img 
+          src="images/c.jpg" 
+          alt="HazeUndayz" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="p-3 pt-2 bg-black">
+        <h3 class="text-[27px] font-bold underline decoration-2 text-white tracking-[-0.03em] mt-4">Joint</h3>
+        <p class="text-sm mt-8 text-gray-300">
+          Between stillness and flame — a quiet breath before it begins.
+        </p>
+        <p class="text-xs mt-4 text-gray-400">
+          静寂と炎のあいだ。  
+          始まる前のひとつの呼吸。
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 4 (VIDEO) -->
+    <div class="relative max-w-4xl mx-auto overflow-hidden shadow-lg mt-24">
+      <div class="aspect-[4/1]">
+        <video autoplay loop muted playsinline class="w-full h-full object-cover">
+          <source src="video/c.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="p-3 pt-2 bg-black">
+        <h3 class="text-[27px] font-bold underline decoration-2 text-white tracking-[-0.03em] mt-4">Smoke</h3>
+        <p class="text-sm mt-8 text-gray-300">
+          The smoke and I drift — and what softens is time and the world itself.
+        </p>
+        <p class="text-xs mt-4 text-gray-400 mb-40">
+          煙と私は漂い、ゆるむのは時間と世界。
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- PRODUCT LIST -->
+<section id="products" class="relative w-full max-w-5xl aspect-[3/3] mx-auto overflow-hidden mb-64 mt-20">
+
+  <!-- 背景動画 -->
+  <video autoplay loop muted playsinline
+         class="absolute inset-0 w-full h-full object-cover -z-10">
+    <source src="video/p1.mp4" type="video/mp4">
+  </video>
+
+  <!-- 中央配置のギャラリー >
+  <div class="absolute inset-0 flex justify-center items-center">
+    <img src="images/c1.png" data-caption="Lemon balm"
+         class="w-60 sm:w-40 md:w-44 shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300">
+  </div-->
+
+</section>
+
+
+
+
+
+
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Something’s waking in the dark.　👁️ <a href="https://t.co/rGzCf1n7Vf">pic.twitter.com/rGzCf1n7Vf</a></p>&mdash; HazeUndayz (@HazeUndayz) <a href="https://twitter.com/HazeUndayz/status/1998007893971583334?ref_src=twsrc%5Etfw">December 8, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+
+
+
+<!-- フッターー　ぐるぐるまわる　HERO SECTION -->
+
+<section id="hero" class="relative flex justify-center max-w-[1600px] w-full m-0 p-0 mt-64 mb-8">
+    <video autoplay muted loop playsinline class="aspect-[4/0.5] object-cover" >
+<source src="video/cm2.mp4" alt="about Visual">
+</video>
+   <div class="absolute left-0 right-0 bottom-0 p-9 flex flex-col items-center text-white font-sans">
+  <p class="text-xs mt-1 text-center tracking-[0.1em]"> </p> 
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-6 text-center">
+  <div class="max-w-5xl mx-auto flex flex-col justify-center items-center gap-8 border-t border-gray-700 pt-8">
+
+    <!-- ロゴ -->
+    <a href="index.html" class="flex flex-col items-center">
+      <img src="images/logowhite.png" alt="HazeUndayzlogo" class="h-20 mb-4">
+      <p class="text-xs tracking-widest uppercase"></p>
+    </a>
+
+    <!-- ナビゲーション -->
+    <nav class="flex flex-wrap justify-center gap-6 text-sm">
+      <a href="what.html" class="hover:text-white transition-colors">About</a>
+      <a href="product.html" class="hover:text-white transition-colors">Products</a>
+      <a href="news.html" class="hover:text-white transition-colors">news</a>
+      <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+    </nav>
+
+    <!-- SNS -->
+    <div class="flex justify-center gap-6">
+      <a href="https://www.instagram.com/hazeundayz" target="_blank" class="hover:text-white transition-colors">Instagram</a>
+      <a href="https://x.com/HazeUndayz" target="_blank" class="hover:text-white transition-colors">X</a>
+    </div>
+
+    <!-- コピーライト -->
+    <p class="text-xs text-gray-500 mt-8">&copy; 2025 HazeUndayz. All rights reserved.</p>
+
+  </div>
+</footer>
+
+
+
+
+
+  
+<script>
+/* メニュー */
+const menuBtn = document.getElementById('menu-button');
+const menuPopup = document.getElementById('menu-popup');
+menuBtn.addEventListener('click', () => {
+  menuPopup.style.display = menuPopup.style.display === 'flex' ? 'none' : 'flex';
+});
+menuPopup.addEventListener('click', () => {
+  menuPopup.style.display = 'none';
+});
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

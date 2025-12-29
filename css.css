@@ -1,0 +1,54 @@
+/* === GENERAL === */
+html, body {
+  scroll-behavior: smooth;
+  font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif; /* 全体フォント */
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* === MENU POPUP === */
+#menu-popup {
+  display: none;                       /* 初期非表示 */
+  position: fixed;                     /* 画面固定 */
+  inset: 0;                            /* top/right/bottom/left 0 */
+  background-color: rgba(0,0,0,0.85); /* 背景色 */
+  z-index: 50;
+  flex-direction: column;              /* 縦に並べる */
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+#menu-popup a {
+  font-family: 'Noto Serif JP', serif;       /* ポップアップ内リンクを統一フォント */
+  font-size: 1.6rem;                   /* リンク文字サイズ */
+  margin: 1rem 0;                      /* 上下間隔 */
+  color: white;                        /* 文字色 */
+  text-decoration: none;               /* 下線消す */
+}
+
+#menu-popup a:hover {
+  color: #ccc;                         /* hover時の色 */
+}
+
+/* === SCROLLBAR HIDE === */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画面全体にフィット */
+  z-index: 1;
+}
+
